@@ -1,9 +1,8 @@
 /*
- * TIC TAC TOE with Minimax AI (Easy-Play Edition)
+
+ * TIC TAC TOE with Minimax AI 
  * -------------------------------------------------
  * Player is 'X', Computer (AI) is 'O'.
- *
- * WHAT'S EASIER NOW:
  *   1. Type a single number 1-9 for your move (numpad-style layout),
  *      instead of typing a row and a column.
  *   2. A "keypad" reference is shown so you always know which
@@ -14,7 +13,8 @@
  *        - Hard   -> AI plays a perfect game (Minimax), it will never lose.
  *   4. Bad input no longer breaks the program - it just asks again.
  *   5. You can play multiple rounds in a row, with a running score.
- *
+ 
+ 
  * Compile:  gcc tictactoe.c -o tictactoe
  * Run:      ./tictactoe
  */
@@ -75,6 +75,7 @@ void printBoard(void) {
 }
 
 /* Returns 1 if the given player has won */
+
 int hasWon(char player) {
     for (int i = 0; i < 3; i++) {
         if (board[i][0] == player && board[i][1] == player && board[i][2] == player)
@@ -90,6 +91,7 @@ int hasWon(char player) {
 }
 
 /* Returns 1 if the board is completely filled */
+
 int isBoardFull(void) {
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
@@ -100,12 +102,14 @@ int isBoardFull(void) {
 
 /* Clears the rest of the current input line - keeps bad input
  * (letters, extra junk, etc.) from breaking later scanf() calls. */
+
 void clearInputLine(void) {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) { }
 }
 
 /* ---------- Minimax Algorithm ---------- */
+
 
 int minimax(int depth, int isMaximizing) {
     if (hasWon(AI))    return 10 - depth;
@@ -142,6 +146,7 @@ int minimax(int depth, int isMaximizing) {
 }
 
 /* Plays the AI's best possible move (perfect play) */
+
 void playBestMove(void) {
     int bestScore = -1000;
     int bestRow = -1, bestCol = -1;
@@ -169,6 +174,7 @@ void playBestMove(void) {
 }
 
 /* Plays a uniformly random legal move */
+
 void playRandomMove(void) {
     int emptyCells[9];
     int count = 0;
@@ -188,6 +194,7 @@ void playRandomMove(void) {
 }
 
 /* Chooses how the computer moves based on the selected difficulty */
+
 void computerMove(Difficulty difficulty) {
     switch (difficulty) {
         case EASY:
@@ -282,13 +289,12 @@ void playOneRound(Difficulty difficulty) {
 
     printBoard();
 
-    while (1) {
-        if (humanTurn) {
+    while (1){
+        if (humanTurn){
             humanMove();
-        } else {
+        } else{
             computerMove(difficulty);
         }
-
         printBoard();
 
         if (hasWon(HUMAN)) {
@@ -306,19 +312,15 @@ void playOneRound(Difficulty difficulty) {
             scoreDraw++;
             break;
         }
-
         humanTurn = !humanTurn;
     }
-
     printf("Score  ->  You: %d   Computer: %d   Draws: %d\n", scoreHuman, scoreAI, scoreDraw);
 }
 
 int main(void) {
     srand((unsigned int)time(NULL));
-
     printf("=== TIC TAC TOE (You are X, Computer is O) ===\n");
     printf("Tip: on your turn, just type the number shown on the cell you want.\n");
-
     Difficulty difficulty = askDifficulty();
 
     do {
@@ -327,6 +329,5 @@ int main(void) {
 
     printf("\nThanks for playing! Final score -> You: %d  Computer: %d  Draws: %d\n",
            scoreHuman, scoreAI, scoreDraw);
-
     return 0;
 }
