@@ -42,6 +42,7 @@ gcc tictactoe.c -o tictactoe
 2. Choose whether you want to go first.
 3. On your turn, type the number of the cell you want to play, using
    this layout:
+   
 
    ```
     1 | 2 | 3
@@ -51,9 +52,9 @@ gcc tictactoe.c -o tictactoe
     7 | 8 | 9
    ```
 
-4. Keep playing until someone gets three in a row (row, column, or
+5. Keep playing until someone gets three in a row (row, column, or
    diagonal) or the board fills up for a draw.
-5. After each round, you'll be asked if you want to play again.
+6. After each round, you'll be asked if you want to play again.
 
 ## How the AI works
 
