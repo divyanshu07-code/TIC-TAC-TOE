@@ -24,6 +24,7 @@ like, and keep a running score.
 
 - A C compiler, e.g. `gcc`.
 
+
 ## Build
 
 ```bash
