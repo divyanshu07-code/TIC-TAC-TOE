@@ -13,8 +13,6 @@
  *   4. Bad input no longer breaks the program - it just asks again.
  *   5. You can play multiple rounds in a row, with a running score.
  
- * Compile:  gcc tictactoe.c -o tictactoe
- * Run:      ./tictactoe
  */
 
 #include <stdio.h>
