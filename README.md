@@ -75,3 +75,4 @@ cell.
 ## License
 
 Feel free to use, modify, and share this project for any purpose.
+If you like this project, consider giving it a ⭐ and sharing your feedback.
