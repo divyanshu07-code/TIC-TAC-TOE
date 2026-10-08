@@ -12,7 +12,6 @@
  *        - Hard   -> AI plays a perfect game (Minimax), it will never lose.
  *   4. Bad input no longer breaks the program - it just asks again.
  *   5. You can play multiple rounds in a row, with a running score.
- 
  */
 
 #include <stdio.h>
